@@ -16,8 +16,9 @@ weatherForm.addEventListener('submit', (e) => {
             if (data.error) {
                 messageOne.textContent = data.error
             } else {
-                messageOne.textContent = data.location
-                messageTwo.textContent = 'Temperature '+data.forecast.temperature+' C'
+                console.log(JSON.stringify(data))
+                messageOne.textContent = data.location + " Feels like : "+data.forecast.feelslike 
+                messageTwo.textContent = 'Temperature is '+data.forecast.temperature+' C. Humidity is '+data.forecast.humidity
             }
         })
     })
